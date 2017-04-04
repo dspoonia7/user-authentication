@@ -4,7 +4,9 @@
     <div class="alert alert-success tmargin15" role="alert">Aadhaar verified successfully.</div>
   </div>
   <div ng-if="login.signedIn==true">
-    <h4>Signed in.. </h4>
+    <h4>Signed In</h4>
+    <br />
+    <p>...</p>
   </div>
 
   <div class="modal fade in" ng-class="{show: login.signingIn==false && login.signedIn==false}" id="exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -34,7 +36,7 @@
             </div>
             <div class="row margin0 form-item">
               <div class="form-group">
-                <input type="text" maxlength="6" ng-model="login.otp" ng-change="login.formValidate()" class="form-control inner-item" placeholder="OTP">
+                <input type="number" maxlength="6" onKeyPress="if(this.value.toString().length>=6) return false;" ng-model="login.otp" ng-change="login.formValidate()" class="form-control inner-item" placeholder="OTP">
               </div>
               <div class="form-group">
                 <button type="button" class="btn btn-secondary signin-btn" ng-click="login.login()" ng-class="{'pointer-events-none': login.formInvalid==true}" ng-disabled="login.formInvalid"  class="close" data-dismiss="modal" aria-label="Close">Submit</button>
@@ -46,16 +48,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- <form role="form" ng-submit="login.login()">
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" ng-model="login.user.name" class="form-control" id="username" placeholder="Username">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" ng-model="login.user.password" class="form-control" id="password" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form> -->
