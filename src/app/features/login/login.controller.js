@@ -17,7 +17,7 @@ export default class LoginController {
     this.$timeout(() => {
       this.signedIn = true;
       this.signingIn = false;
-    }, 1000);
+    }, 3000);
   }
 
   validateAadhaar() {
