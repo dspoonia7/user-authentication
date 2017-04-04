@@ -1,0 +1,61 @@
+<div class="login jumbotron center-block">
+  <div ng-if="login.signingIn==true">
+    <h4>Signing...</h4>
+    <div class="alert alert-success tmargin15" role="alert">Aadhaar verified successfully.</div>
+  </div>
+  <div ng-if="login.signedIn==true">
+    <h4>Signed in.. </h4>
+  </div>
+
+  <div class="modal fade in" ng-class="{show: login.signingIn==false && login.signedIn==false}" id="exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Register Aadhaar</h3>
+        </div>
+        <div class="modal-body">
+          <form role="form" class="form-inline">
+            <div class="row margin0">
+              <div class="form-group">
+                <img src="/img/aadhaar-logo.png" />
+              </div>
+              <div class="form-group aadhaar-text">
+                <input type="number" min="0" ng-model="login.aadhar" ng-change="login.validateAadhaar($event)" class="form-control inner-item">
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-secondary" ng-click="login.verifyAadhaar()" ng-class="{'pointer-events-none': login.aadhaarInvalid == true}" ng-disabled="login.aadhaarInvalid">Verify</button>
+              </div>
+            </div>
+            <div class="row margin0">
+              <div class="form-group form-item">
+                <input type="checkbox" ng-model="login.kycCheck" ng-change="login.formValidate()">
+                <span class="text-info inner-item">I agree to eSign this <u>KYC document</u> to get started.</span>
+              </div>
+            </div>
+            <div class="row margin0 form-item">
+              <div class="form-group">
+                <input type="text" maxlength="6" ng-model="login.otp" ng-change="login.formValidate()" class="form-control inner-item" placeholder="OTP">
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-secondary signin-btn" ng-click="login.login()" ng-class="{'pointer-events-none': login.formInvalid==true}" ng-disabled="login.formInvalid"  class="close" data-dismiss="modal" aria-label="Close">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <form role="form" ng-submit="login.login()">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" ng-model="login.user.name" class="form-control" id="username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" ng-model="login.user.password" class="form-control" id="password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form> -->

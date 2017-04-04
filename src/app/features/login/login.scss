@@ -1,0 +1,29 @@
+.login {
+  width: 80%;
+  height: 500px;
+}
+
+.modal {
+  &:in {
+    display: block;
+  }
+
+  img {
+    width: 70px;
+  }
+
+  .aadhaar-text {
+    width: calc(100% - 200px);
+    margin: 10px 0;
+    padding-left: 12px;
+  }
+
+  .form-item {
+    padding: 6px 10px;
+    margin-left: 75px;
+  }
+
+  .signin-btn {
+    margin-left: 20%;
+  }
+}

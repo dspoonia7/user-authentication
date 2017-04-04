@@ -1,0 +1,87 @@
+.container {
+  .jumbotron {
+    border-radius: 2px;
+    margin-top: 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .home {
+    width: 80%;
+  }
+
+  .form-control, .btn {
+    border-radius: 2px;
+
+    .inner-item {
+      margin: 0 auto;
+    }
+  }
+
+  .form-inline .form-control {
+    width: 100%;
+  }
+
+  .text-info {
+    font-size: 90%;
+    color: #777;
+  }
+
+  .margin0 {
+    margin: 0;
+  }
+
+  .tmargin15 {
+    margin-top: 15px;
+  }
+
+  .tmargin5 {
+    margin-top: 5px;
+  }
+
+  .bmargin15 {
+    margin-bottom: 15px;
+  }
+
+  .bmargin25 {
+    margin-bottom: 25px;
+  }
+
+  .lmargin10 {
+    margin-left: 10px;
+  }
+
+  .pointer-events-none {
+    pointer-events: none !important;
+  }
+
+  .padding10 {
+    padding: 10px;
+  }
+
+  .w90 {
+    width: 90%;
+  }
+
+  .btn-sbmt {
+    max-width: 200px;
+  }
+
+  .btn-primary, .btn-secondary {
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+
+
+    .signin-btn {
+      margin-left: 5%;
+    }
+  }
+}

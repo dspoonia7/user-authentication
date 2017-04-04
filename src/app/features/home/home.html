@@ -1,0 +1,12 @@
+<div class="home jumbotron center-block">
+  <h3 class="text-center bmargin25">Sign Up</h3>
+  <div class="form-group">
+    <input type="text" ng-model="home.name" ng-change="home.validateEmail($event)" class="form-control center-block w90" placeholder="your.email@digio.in">
+  </div>
+  <div class="form-group">
+    <span class="text-info text-center center-block">By continuing. I confirm to <u>Terms of Service</u> and <u>Privacy Policy</u> of <a href="https://www.digio.in" target="_blank"><u>digio.in</u></a></span>
+  </div>
+  <div class="form-group">
+    <a ui-sref="login" class="btn btn-primary center-block btn-sbmt" ng-class="{'pointer-events-none': home.emailInvalid == true}" ng-disabled="home.emailInvalid">Continue</a>
+  </div>
+</div>
